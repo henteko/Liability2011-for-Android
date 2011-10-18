@@ -26,6 +26,8 @@ public class MainActivity extends Activity {
 //		
 //		Intent intent = new Intent(MainActivity.this, IndexActivity.class);
 //		MainActivity.this.startActivityForResult(intent, 0);
+		
+		//test commit!!
         
     }
 }
