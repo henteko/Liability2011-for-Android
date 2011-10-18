@@ -6,9 +6,12 @@ package com.teres.Liability2011;
  * Creator is henteko
  */
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
     /** Called when the activity is first created. */
@@ -17,17 +20,30 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        //Test start Activity
-        Intent intent = new Intent(MainActivity.this, MapActivity.class);
-		MainActivity.this.startActivityForResult(intent, 0);
+        Button Indexbutton = (Button) findViewById(R.id.IndexButton);
+        Indexbutton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) { 
+        		Intent intent = new Intent(MainActivity.this, MapActivity.class);
+        		MainActivity.this.startActivityForResult(intent, 0);
+        	}
+        });
+        
+        Button Mapbutton = (Button) findViewById(R.id.MapButton);
+        Mapbutton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) { 
+        		Intent intent = new Intent(MainActivity.this, TimeTableActivity.class);
+        		MainActivity.this.startActivityForResult(intent, 0);
+        	}
+        });
+        
+        Button TimeTablebutton = (Button) findViewById(R.id.TimeTableButton);
+        TimeTablebutton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) { 
+        		Intent intent = new Intent(MainActivity.this, IndexActivity.class);
+        		MainActivity.this.startActivityForResult(intent, 0);
+        	}
+        });
 		
-//		Intent intent = new Intent(MainActivity.this, TimeTableActivity.class);
-//		MainActivity.this.startActivityForResult(intent, 0);
-//		
-//		Intent intent = new Intent(MainActivity.this, IndexActivity.class);
-//		MainActivity.this.startActivityForResult(intent, 0);
-		
-		//test commit!!
         
     }
 }
