@@ -14,7 +14,7 @@
             </intent-filter>
         </activity>
         <activity android:name="MapActivity"></activity>
-        <activity android:name="TimeActivity"></activity>
+        <activity android:name="TimeTableActivity"></activity>
         <activity android:name="IndexActivity"></activity>
 
     </application>
