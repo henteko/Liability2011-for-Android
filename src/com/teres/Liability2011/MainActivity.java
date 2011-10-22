@@ -21,7 +21,7 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 	
 	private JSONObject rootJSON;
-	private JsonParse jsonparse;
+	private String Sjson;
 	private int Log_id = 0;
 	
 	
@@ -72,9 +72,8 @@ public class MainActivity extends Activity {
         	
         	dJson.set_URL("http://liability2011.appspot.com/liability2011test?command=Load_data&id=" + id);
             rootJSON = dJson.get_Date();
-            jsonparse = new JsonParse(rootJSON);
             
-//            ArrayList<String>[] hoge = jsonparse.get_Aogeki();
+            Sjson = rootJSON.toString();
             
             
             Log_id = id;
