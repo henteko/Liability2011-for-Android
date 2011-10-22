@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         Button Indexbutton = (Button) findViewById(R.id.IndexButton);
         Indexbutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		Intent intent = new Intent(MainActivity.this, MapActivity.class);
+        		Intent intent = new Intent(MainActivity.this, IndexActivity.class);
         		MainActivity.this.startActivityForResult(intent, 0);
         	}
         });
@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
         Button Mapbutton = (Button) findViewById(R.id.MapButton);
         Mapbutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		Intent intent = new Intent(MainActivity.this, TimeTableActivity.class);
+        		Intent intent = new Intent(MainActivity.this, MapActivity.class);
         		MainActivity.this.startActivityForResult(intent, 0);
         	}
         });
@@ -51,8 +51,9 @@ public class MainActivity extends Activity {
         Button TimeTablebutton = (Button) findViewById(R.id.TimeTableButton);
         TimeTablebutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		Intent intent = new Intent(MainActivity.this, IndexActivity.class);
-        		MainActivity.this.startActivityForResult(intent, 0);
+        		Intent intent = new Intent(MainActivity.this, TimeTableActivity.class);
+//        		MainActivity.this.startActivityForResult(intent, 0);
+        		startActivity(intent);
         	}
         });
 		
