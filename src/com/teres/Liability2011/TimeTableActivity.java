@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 import jp.teres.numa08.chofufesdata.ChofufesData;
+import jp.teres.numa08.chofufesdata.TimeTable;
 import net.arnx.jsonic.JSON;
 import android.app.Activity;
 import android.content.res.AssetManager;
@@ -77,9 +78,11 @@ public class TimeTableActivity extends Activity{
 
 	private void viewTest(ChofufesData chofufesData) {
 		// TODO Auto-generated method stub
-		String json = JSON.encode(chofufesData);
-		Log.d(TAG, chofufesData.getAozoraList().size() + "");
-		textView.setText(json);
+		String title = null;
+		for(TimeTable timeTable : chofufesData.getAozoraList()){
+			title += timeTable.getTitle() + ",";
+		}
+		textView.setText(title);
 	}
 
 	private ChofufesData loadDataByJson() throws Exception {

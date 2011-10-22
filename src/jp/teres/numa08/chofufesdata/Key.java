@@ -15,6 +15,9 @@ public class Key {
 	
 	private Key parent;
 
+	public Key() {
+		// TODO Auto-generated constructor stub
+	}
 	public boolean isComplete() {
 		return complete;
 	}

@@ -9,6 +9,9 @@ public class ChofufesData {
 	private ArrayList<Shitsunai> shitsunaiList;
 	private int Update_Num;
 	
+	public ChofufesData() {
+		// TODO Auto-generated constructor stub
+	}
 	public ChofufesData(ArrayList<TimeTable> aozoraList, ArrayList<Roten> rotenList, ArrayList<Shitsunai> shitsunaiList, int Update_Num){
 		this.aozoraList = aozoraList;
 		this.rotenList = rotenList;

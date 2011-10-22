@@ -9,6 +9,10 @@ public class Roten extends Chofufes {
 	
 	private String description;
 	
+	public Roten() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Roten(int number, String title, String description){
 		this.number = number;
 		this.title = title;

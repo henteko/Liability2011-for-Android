@@ -8,6 +8,10 @@ public class Shitsunai extends Chofufes {
 	
 	private String title;
 	
+	public Shitsunai() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Shitsunai(int number, String title){
 		this.number = number;
 		this.title = title;

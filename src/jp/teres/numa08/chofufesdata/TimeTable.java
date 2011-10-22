@@ -15,6 +15,10 @@ public class TimeTable extends Chofufes{
 	private String title;
 	
 	private String description;
+	
+	public TimeTable() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public TimeTable(Date startDate, Date endDate, int field, String title, String description){
 		this.startDate = startDate;
