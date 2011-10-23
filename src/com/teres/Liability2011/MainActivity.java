@@ -8,17 +8,20 @@ package com.teres.Liability2011;
 
 import org.json.JSONObject;
 
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -29,6 +32,8 @@ public class MainActivity extends Activity {
 	private JSONObject rootJSON;
 	private String Sjson;
 
+	private final Handler handler = new Handler();
+	
 	private ProgressDialog dlg = null;
 
 	/** Called when the activity is first created. */
@@ -112,7 +117,10 @@ public class MainActivity extends Activity {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
-
+				
+				//重い処理をここに書く
+				//参照:http://d.hatena.ne.jp/sy-2010/20100125/1264391774
+				
 				DJson dJson = new DJson();
 				final int id = dJson.get_id();
 				if (id != log_id) {
@@ -128,11 +136,26 @@ public class MainActivity extends Activity {
 					e.commit();
 
 					Log.d("aaaaaaaaaaaaaaaaaaaaaa", "true");
-					dlg.dismiss();
 				} else {
 					Log.d("aaaaaaaaaaaaaaaaaaaaaaa", "false");
-					dlg.dismiss();
 				}
+				
+				
+				handler.post(new Runnable() {
+					public void run() {
+						
+						if (id != log_id) {
+							Toast.makeText(MainActivity.this,
+									"DBの更新が終わりました", Toast.LENGTH_SHORT).show();
+							
+						} else {
+							Toast.makeText(MainActivity.this,
+									"DBは最新の状態です", Toast.LENGTH_SHORT).show();
+						}
+
+						dlg.dismiss();
+					}
+				});
 
 			}
 
