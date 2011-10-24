@@ -134,9 +134,14 @@ public class MainActivity extends Activity {
 					Editor e = pref.edit();
 					e.putInt("key", id);
 					e.commit();
+					
+					e.putString("sjson", Sjson);
+					e.commit();
 
 					Log.d("aaaaaaaaaaaaaaaaaaaaaa", "true");
 				} else {
+					
+					Sjson = pref.getString("sjson", "");
 					Log.d("aaaaaaaaaaaaaaaaaaaaaaa", "false");
 				}
 				
