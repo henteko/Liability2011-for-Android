@@ -8,7 +8,6 @@ package com.teres.Liability2011;
 
 import org.json.JSONObject;
 
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -20,7 +19,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -40,10 +41,24 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		//タイトルバーの削除
+		//参考:http://www.adakoda.com/android/000155.html
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
 		setContentView(R.layout.main);
 
 		// jsonをアップデート
 		Updata();
+		
+		
+		ImageButton Up_dataButton = (ImageButton) findViewById(R.id.Up_dataButton);
+		Up_dataButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				//DBのアップデート処理実行
+				Updata();
+			}
+		});
 
 		Button Indexbutton = (Button) findViewById(R.id.IndexButton);
 		Indexbutton.setOnClickListener(new View.OnClickListener() {
