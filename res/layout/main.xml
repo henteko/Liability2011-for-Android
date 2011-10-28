@@ -2,11 +2,11 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+	android:layout_height="fill_parent" android:background="@color/background_color">
 
 	<LinearLayout android:id="@+id/actionbar_compat"
 		android:layout_width="fill_parent" android:layout_height="45dp"
-		android:orientation="horizontal" android:background="#FFFFFF">
+		android:orientation="horizontal" android:background="@color/actionbar_color">
 		<RelativeLayout android:layout_width="fill_parent"
 			android:layout_height="wrap_content">
 			<ImageView android:src="@drawable/icon"
