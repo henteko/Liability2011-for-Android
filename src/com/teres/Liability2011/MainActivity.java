@@ -94,29 +94,29 @@ public class MainActivity extends Activity {
 
 	}
 
-	// メニューの定義
-	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-
-		if (menu_flag) {
-
-			MenuItem add = menu.add(0, MENU_ADD_ID, 0, "更新する");
-			menu_flag = false;
-		}
-
-		return true;
-	}
-
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case MENU_ADD_ID:
-			// jsonの更新処理
-			Updata();
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+//	// メニューの定義
+//	@Override
+//	public boolean onPrepareOptionsMenu(Menu menu) {
+//		super.onCreateOptionsMenu(menu);
+//
+//		if (menu_flag) {
+//
+//			MenuItem add = menu.add(0, MENU_ADD_ID, 0, "更新する");
+//			menu_flag = false;
+//		}
+//
+//		return true;
+//	}
+//
+//	public boolean onOptionsItemSelected(MenuItem item) {
+//		switch (item.getItemId()) {
+//		case MENU_ADD_ID:
+//			// jsonの更新処理
+//			Updata();
+//			return true;
+//		}
+//		return super.onOptionsItemSelected(item);
+//	}
 
 	public void Updata() {
 		final SharedPreferences pref = getSharedPreferences("pref",
