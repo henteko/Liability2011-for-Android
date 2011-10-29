@@ -121,6 +121,8 @@ public class MainActivity extends Activity {
 //	}
 	
 	public void do_Updata() {
+		//ネット接続の可否を判定
+		//参考:http://dayafterneet.blogspot.com/2011/09/android.html
 		ConnectivityManager connectivity = (ConnectivityManager)this.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo network = connectivity.getActiveNetworkInfo();
 		if (network == null) {
