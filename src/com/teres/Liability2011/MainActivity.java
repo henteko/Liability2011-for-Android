@@ -10,14 +10,16 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -49,14 +51,14 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.main);
 
 		// jsonをアップデート
-		Updata();
+		do_Updata();
 		
 		
 		ImageButton Up_dataButton = (ImageButton) findViewById(R.id.Up_dataButton);
 		Up_dataButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				//DBのアップデート処理実行
-				Updata();
+				do_Updata();
 			}
 		});
 
@@ -117,6 +119,23 @@ public class MainActivity extends Activity {
 //		}
 //		return super.onOptionsItemSelected(item);
 //	}
+	
+	public void do_Updata() {
+		ConnectivityManager connectivity = (ConnectivityManager)this.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo network = connectivity.getActiveNetworkInfo();
+		if (network == null) {
+			Toast.makeText(this.getApplicationContext(), "ネットワークに接続してください", Toast.LENGTH_LONG).show();
+		} else {
+			if (!network.isAvailable()) {
+				Toast.makeText(this.getApplicationContext(), "ネットワークに接続してください", Toast.LENGTH_LONG).show();
+			} else if (!network.isConnectedOrConnecting()) {
+				Toast.makeText(this.getApplicationContext(), "ネットワークに接続してください", Toast.LENGTH_LONG).show();
+			} else {
+				//ネットに接続済みの時
+				Updata();
+			}
+		}
+	}
 
 	public void Updata() {
 		final SharedPreferences pref = getSharedPreferences("pref",
