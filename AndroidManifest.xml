@@ -6,16 +6,16 @@
 
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
 		<activity android:name=".MainActivity" android:label="@string/app_name"
-			android:configChanges="orientation|keyboardHidden">
+			android:screenOrientation="portrait">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name="MapActivity" android:configChanges="orientation|keyboardHidden"></activity>
+		<activity android:name="MapActivity" android:screenOrientation="portrait"></activity>
 		<activity android:name="TimeTableActivity"
 			android:configChanges="orientation|keyboardHidden"></activity>
-		<activity android:name="IndexActivity" android:configChanges="orientation|keyboardHidden"></activity>
+		<activity android:name="IndexActivity" android:screenOrientation="portrait"></activity>
 
 	</application>
 

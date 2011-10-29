@@ -6,6 +6,8 @@ package com.teres.Liability2011;
  * Creator is henteko
  */
 
+import java.util.Calendar;
+
 import org.json.JSONObject;
 
 import android.app.Activity;
@@ -24,6 +26,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -38,6 +41,12 @@ public class MainActivity extends Activity {
 	private final Handler handler = new Handler();
 	
 	private ProgressDialog dlg = null;
+	
+	private TextView toolbar_text;
+	
+	private final int H_year = 2011;
+	private final int H_month = 10;
+	private final int H_day[] = {18,19,20};
 
 	/** Called when the activity is first created. */
 	@Override
@@ -119,6 +128,71 @@ public class MainActivity extends Activity {
 //		}
 //		return super.onOptionsItemSelected(item);
 //	}
+	
+	@Override
+    protected void onStart() {
+    	super.onStart();
+    	
+    	//日付チェック
+		toolbar_text = (TextView) findViewById(R.id.toolbar_text);
+		day_Check();
+    	
+    }
+	
+	
+	public void day_Check() {
+		final Calendar calendar = Calendar.getInstance();
+
+		//年
+		final int year = calendar.get(Calendar.YEAR);
+		//月(+1しろ)
+		final int month = calendar.get(Calendar.MONTH);
+		//日
+		final int day = calendar.get(Calendar.DAY_OF_MONTH);
+		//時
+		final int hour = calendar.get(Calendar.HOUR_OF_DAY);
+		//分
+		final int minute = calendar.get(Calendar.MINUTE);
+		//秒
+		final int second = calendar.get(Calendar.SECOND);
+		//ミリ
+		final int ms = calendar.get(Calendar.MILLISECOND);
+		
+		if(H_year < year) {
+			int num = year - H_year;
+			toolbar_text.setText("調布祭2011まであと" + num + "年です");
+		}else if(H_year > year){
+			int num = H_year - year;
+			toolbar_text.setText("調布祭2011から" + num + "年たちました");
+		}else {
+			//年がイコールの時
+			if(H_month > month) {
+				int num = H_month - month;
+				toolbar_text.setText("調布祭2011まであと" + num + "ヶ月です");
+			}else if(H_month < month) {
+				int num = month - H_month;
+				toolbar_text.setText("調布祭2011から" + num + "ヶ月たちました");
+			}else {
+				//月も一緒だった時
+				
+				if(H_day[0] > day) {
+					int num = H_day[0] - day;
+					toolbar_text.setText("調布祭2011まであと" + num + "日です");
+				}else if(H_day[H_day.length - 1] < day){
+					int num = day - H_day[H_day.length - 1];
+					toolbar_text.setText("調布祭2011から" + num + "日たちました");
+				}else {
+					for(int i=0;i<H_day.length;i++) {
+						if(H_day[i] == day) {
+							//当日の場合
+							toolbar_text.setText("調布祭2011当日" + i+1 + "日目");
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
 	
 	public void do_Updata() {
 		//ネット接続の可否を判定
