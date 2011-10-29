@@ -11,6 +11,9 @@ package com.teres.Liability2011;
 
 import org.json.JSONObject;
 
+import com.teres.Liability2011.index.IndexActivity;
+import com.teres.Liability2011.timetable.TimeTableActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,7 +47,8 @@ public class MainActivity extends Activity {
         Mapbutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
         		Intent intent = new Intent(MainActivity.this, MapActivity.class);
-        		MainActivity.this.startActivityForResult(intent, 0);
+        		//MainActivity.this.startActivityForResult(intent, 0);
+        		startActivity(intent);
         	}
         });
         

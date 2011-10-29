@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ChofufesData {
 	private static final String TAG = ChofufesData.class.getSimpleName();
-	private ArrayList<TimeTable> aozoraList;
+	private ArrayList<TimeTable> timeTableList;
 	private ArrayList<Roten> rotenList;
 	private ArrayList<Shitsunai> shitsunaiList;
 	private int Update_Num;
@@ -13,18 +13,18 @@ public class ChofufesData {
 		// TODO Auto-generated constructor stub
 	}
 	public ChofufesData(ArrayList<TimeTable> aozoraList, ArrayList<Roten> rotenList, ArrayList<Shitsunai> shitsunaiList, int Update_Num){
-		this.aozoraList = aozoraList;
+		this.timeTableList = aozoraList;
 		this.rotenList = rotenList;
 		this.shitsunaiList = shitsunaiList;
 		this.Update_Num = Update_Num;
 	}
 
 	public ArrayList<TimeTable> getAozoraList() {
-		return aozoraList;
+		return timeTableList;
 	}
 
 	public void setAozoraList(ArrayList<TimeTable> aozoraList) {
-		this.aozoraList = aozoraList;
+		this.timeTableList = aozoraList;
 	}
 
 	public ArrayList<Roten> getRotenList() {
