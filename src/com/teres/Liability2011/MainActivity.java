@@ -13,6 +13,9 @@ import java.util.Date;
 
 import org.json.JSONObject;
 
+import com.teres.Liability2011.index.IndexActivity;
+import com.teres.Liability2011.timetable.TimeTableActivity;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -46,7 +49,6 @@ public class MainActivity extends Activity {
 	private ProgressDialog dlg = null;
 	
 	private TextView toolbar_text;
-	
 	private final int H_year = 2011;
 	private final int H_month = 10;
 	private final int H_day[] = {18,19,20};

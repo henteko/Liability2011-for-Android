@@ -1,14 +1,13 @@
 package jp.teres.numa08.chofufesdata;
 
-import java.util.Date;
 
 
 public class TimeTable extends Chofufes{
 	private Key key;
 	
-	private Date startDate;
+	private Long startDate;
 	
-	private Date endDate;
+	private Long endDate;
 	
 	private int field;
 	
@@ -20,7 +19,7 @@ public class TimeTable extends Chofufes{
 		// TODO Auto-generated constructor stub
 	}
 
-	public TimeTable(Date startDate, Date endDate, int field, String title, String description){
+	public TimeTable(Long startDate, Long endDate, int field, String title, String description){
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.field = field;
@@ -42,19 +41,19 @@ public class TimeTable extends Chofufes{
 	}
 
 
-	public Date getStartDate() {
+	public Long getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(Long startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
+	public Long getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(Long endDate) {
 		this.endDate = endDate;
 	}
 
