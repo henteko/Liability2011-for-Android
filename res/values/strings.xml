@@ -2,5 +2,6 @@
 <resources>
     <string name="hello">Hello World, MainActivity!</string>
     <string name="app_name">Liability2011-for-android</string>
+    <string name="first_day">19</string>
     <string name="json">CHOFUFES_JSON</string>
 </resources>
