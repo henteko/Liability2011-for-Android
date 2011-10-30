@@ -49,41 +49,6 @@ public class MainActivity extends Activity {
 	private ProgressDialog dlg = null;
 	
 	private TextView toolbar_text;
-	
-<<<<<<< HEAD
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        
-        
-        Button Indexbutton = (Button) findViewById(R.id.IndexButton);
-        Indexbutton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) { 
-        		Intent intent = new Intent(MainActivity.this, IndexActivity.class);
-        		MainActivity.this.startActivityForResult(intent, 0);
-        	}
-        });
-        
-        Button Mapbutton = (Button) findViewById(R.id.MapButton);
-        Mapbutton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) { 
-        		Intent intent = new Intent(MainActivity.this, MapActivity.class);
-        		//MainActivity.this.startActivityForResult(intent, 0);
-        		startActivity(intent);
-        	}
-        });
-        
-        Button TimeTablebutton = (Button) findViewById(R.id.TimeTableButton);
-        TimeTablebutton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) { 
-        		Intent intent = new Intent(MainActivity.this, TimeTableActivity.class);
-//        		MainActivity.this.startActivityForResult(intent, 0);
-        		startActivity(intent);
-        	}
-        });
-=======
 	private final int H_year = 2011;
 	private final int H_month = 10;
 	private final int H_day[] = {18,19,20};
@@ -92,7 +57,6 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
->>>>>>> 84346bee6d9b319d292e6b9bcba2a8b36d1bf49b
 		
 		//タイトルバーの削除
 		//参考:http://www.adakoda.com/android/000155.html

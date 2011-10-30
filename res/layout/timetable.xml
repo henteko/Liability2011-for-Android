@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent">
-    <LinearLayout
-  android:orientation="vertical"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent"
-  android:padding="10dip">
-  <ListView
-  android:id="@+id/timetable_listview"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent"/>
-  </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="@color/background_color" android:orientation="vertical">
+
+	<LinearLayout android:id="@+id/actionbar_compat"
+		android:layout_width="fill_parent" android:layout_height="45dp"
+		android:orientation="horizontal" android:background="@drawable/actionbar_gradation">
+	</LinearLayout>
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:padding="10dip">
+		<ListView android:id="@+id/timetable_listview"
+			android:layout_width="fill_parent" android:layout_height="fill_parent" />
+	</LinearLayout>
 </LinearLayout>
