@@ -6,7 +6,10 @@ package com.teres.Liability2011;
  * Creator is henteko
  */
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.Calendar;
+import java.util.Date;
 
 import org.json.JSONObject;
 
@@ -139,6 +142,47 @@ public class MainActivity extends Activity {
     	
     }
 	
+	/**
+	 * 2つの日付の差を求めます。
+	 * 日付文字列 strDate1 - strDate2 が何日かを返します。
+	 * 
+	 * @param strDate1    日付文字列 yyyy/MM/dd
+	 * @param strDate2    日付文字列 yyyy/MM/dd
+	 * @return    2つの日付の差
+	 * @throws ParseException 日付フォーマットが不正な場合
+	 */
+	public static int differenceDays(String strDate1,String strDate2) 
+	    throws ParseException {
+	    Date date1 = DateFormat.getDateInstance().parse(strDate1);
+	    Date date2 = DateFormat.getDateInstance().parse(strDate2);
+	    return differenceDays(date1,date2);
+	}
+	/**
+	 * 2つの日付の差を求めます。
+	 * java.util.Date 型の日付 date1 - date2 が何日かを返します。
+	 * 
+	 * 計算方法は以下となります。
+	 * 1.最初に2つの日付を long 値に変換します。
+	 * 　※この long 値は 1970 年 1 月 1 日 00:00:00 GMT からの
+	 * 　経過ミリ秒数となります。
+	 * 2.次にその差を求めます。
+	 * 3.上記の計算で出た数量を 1 日の時間で割ることで
+	 * 　日付の差を求めることができます。
+	 * 　※1 日 ( 24 時間) は、86,400,000 ミリ秒です。
+	 * 
+	 * @param date1    日付 java.util.Date
+	 * @param date2    日付 java.util.Date
+	 * @return    2つの日付の差
+	 */
+	public static int differenceDays(Date date1,Date date2) {
+	    long datetime1 = date1.getTime();
+	    long datetime2 = date2.getTime();
+	    long one_date_time = 1000 * 60 * 60 * 24;
+	    long diffDays = (datetime1 - datetime2) / one_date_time;
+	    return (int)diffDays; 
+	}
+
+	
 	
 	public void day_Check() {
 		final Calendar calendar = Calendar.getInstance();
@@ -158,40 +202,71 @@ public class MainActivity extends Activity {
 		//ミリ
 		final int ms = calendar.get(Calendar.MILLISECOND);
 		
-		if(H_year < year) {
-			int num = year - H_year;
-			toolbar_text.setText("調布祭2011まであと" + num + "年です");
-		}else if(H_year > year){
-			int num = H_year - year;
-			toolbar_text.setText("調布祭2011から" + num + "年たちました");
-		}else {
-			//年がイコールの時
-			if(H_month > month) {
-				int num = H_month - month;
-				toolbar_text.setText("調布祭2011まであと" + num + "ヶ月です");
-			}else if(H_month < month) {
-				int num = month - H_month;
-				toolbar_text.setText("調布祭2011から" + num + "ヶ月たちました");
-			}else {
-				//月も一緒だった時
-				
-				if(H_day[0] > day) {
-					int num = H_day[0] - day;
-					toolbar_text.setText("調布祭2011まであと" + num + "日です");
-				}else if(H_day[H_day.length - 1] < day){
-					int num = day - H_day[H_day.length - 1];
-					toolbar_text.setText("調布祭2011から" + num + "日たちました");
-				}else {
-					for(int i=0;i<H_day.length;i++) {
-						if(H_day[i] == day) {
-							//当日の場合
-							toolbar_text.setText("調布祭2011当日" + i+1 + "日目");
-							break;
-						}
-					}
+		boolean flag = false;
+		if(H_year == year && H_month == month) {
+			for(int i=0;i<H_day.length;i++) {
+				if(H_day[i] == day) {
+					//当日の場合
+					toolbar_text.setText("調布祭2011当日" + i+1 + "日目");
+					flag = true;
+					break;
 				}
 			}
 		}
+		
+		if(!flag) {
+			String Hs = "" + H_year + "/" + H_month + "/" + H_day[0];
+			String Ns = "" + year + "/" + month + "/" + day;
+			
+			try {
+				int ret = differenceDays(Hs,Ns);
+				if(ret < 0) {
+					//マイナスの時、最終日から数えさせる
+					Hs = "" + H_year + "/" + H_month + "/" + H_day[H_day.length - 1];
+					ret = differenceDays(Hs,Ns);
+				}
+				toolbar_text.setText("調布祭2011まであと" + ret + "日です");
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				Log.d("aaaaaaaaaaaaaaaaa","error" + e);
+			}
+		}
+		
+//		if(H_year < year) {
+//			int num = year - H_year;
+//			toolbar_text.setText("調布祭2011まであと" + num + "年です");
+//		}else if(H_year > year){
+//			int num = H_year - year;
+//			toolbar_text.setText("調布祭2011から" + num + "年たちました");
+//		}else {
+//			//年がイコールの時
+//			if(H_month > month) {
+//				int num = H_month - month;
+//				toolbar_text.setText("調布祭2011まであと" + num + "ヶ月です");
+//			}else if(H_month < month) {
+//				int num = month - H_month;
+//				toolbar_text.setText("調布祭2011から" + num + "ヶ月たちました");
+//			}else {
+//				//月も一緒だった時
+//				
+//				if(H_day[0] > day) {
+//					int num = H_day[0] - day;
+//					toolbar_text.setText("調布祭2011まであと" + num + "日です");
+//				}else if(H_day[H_day.length - 1] < day){
+//					int num = day - H_day[H_day.length - 1];
+//					toolbar_text.setText("調布祭2011から" + num + "日たちました");
+//				}else {
+//					for(int i=0;i<H_day.length;i++) {
+//						if(H_day[i] == day) {
+//							//当日の場合
+//							toolbar_text.setText("調布祭2011当日" + i+1 + "日目");
+//							break;
+//						}
+//					}
+//				}
+//			}
+//		}
 	}
 	
 	public void do_Updata() {
