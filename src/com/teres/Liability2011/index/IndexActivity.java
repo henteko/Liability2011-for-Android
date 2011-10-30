@@ -44,6 +44,7 @@ public class IndexActivity extends Activity{
 					long id) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(IndexActivity.this, IndexesActivity.class);
+				//クリックされた項目を判定し、項目名（露店、室内展示、ステージのいずれか）を次のアクティビティに渡す
 				if(position == 0){
 					intent.putExtra("KIND", KIND.Roten.toString());
 				} else if(position == 1){

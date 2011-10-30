@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+	android:layout_height="fill_parent" android:background="@color/background_color">
+
+	<LinearLayout android:id="@+id/actionbar_compat"
+		android:layout_width="fill_parent" android:layout_height="45dp"
+		android:orientation="horizontal" android:background="@drawable/actionbar_gradation">
+		<RelativeLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<ImageView android:src="@drawable/icon"
+				android:layout_height="wrap_content" android:id="@+id/imageView1"
+				android:layout_width="wrap_content" android:layout_alignParentLeft="true"></ImageView>
+			<ImageButton android:src="@android:drawable/ic_menu_rotate"
+				android:id="@+id/Up_dataButton" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="DB更新"
+				android:layout_alignParentRight="true" android:background="@null" />
+		</RelativeLayout>
+	</LinearLayout>
+
+	<com.teres.Liability2011.DashboardLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1">
+
+		<Button android:id="@+id/IndexButton" style="@style/DashboardButton"
+			android:text="Index" android:drawableTop="@drawable/icon" />
+		<Button android:id="@+id/MapButton" style="@style/DashboardButton"
+			android:text="Map" android:drawableTop="@drawable/icon" />
+		<Button android:id="@+id/TimeTableButton" style="@style/DashboardButton"
+			android:text="TimeTable" android:drawableTop="@drawable/icon" />
+
+	</com.teres.Liability2011.DashboardLayout>
 
 
-
-	<Button android:id="@+id/IndexButton" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:drawableTop="@drawable/icon"
-		android:text="Index">
-	</Button>
-	
-	<Button android:id="@+id/MapButton" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:drawableTop="@drawable/icon"
-		android:text="Map">
-	</Button>
-	
-	<Button android:id="@+id/TimeTableButton" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:drawableTop="@drawable/icon"
-		android:text="TimeTable">
-	</Button>
+	<LinearLayout android:id="@+id/toolbar"
+		android:layout_width="fill_parent" android:layout_height="60dp"
+		android:orientation="horizontal" android:background="#FFFFFF">
+		<TextView android:id="@+id/toolbar_text" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:textSize="15sp"
+			android:gravity="center_horizontal" android:layout_gravity="center_vertical"
+			android:text="" android:textColor="#000000" />
+		<RelativeLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+		</RelativeLayout>
+	</LinearLayout>
 
 </LinearLayout>

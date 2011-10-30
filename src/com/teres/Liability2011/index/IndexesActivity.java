@@ -44,8 +44,10 @@ public class IndexesActivity extends Activity {
 	private IndexAdapter addAdapter(String kindIndex) throws Exception {
 		// TODO Auto-generated method stub
 		IndexAdapter adapter;
-		ArrayList<Index> titleList = new ArrayList<Index>();
+		ArrayList<Index> indexList = new ArrayList<Index>();
 		ChofufesData chofufesData = LoadJson.loadByJson(getAssets());
+		//indexListに項目を追加する。IndexActivityから渡されたKINDの種類で判断して
+		//どの項目を渡すのかを選択する
 		if(kindIndex.equals(KIND.Roten.toString())){
 			ArrayList<Roten> rotenList = chofufesData.getRotenList();
 			Collections.sort(rotenList, new Comparator<Roten>(){
@@ -56,7 +58,7 @@ public class IndexesActivity extends Activity {
 				}
 			});
 			for(Roten roten : rotenList){
-				titleList.add(new Index(roten.getNumber() + "", roten.getTitle(), roten.getDescription()));
+				indexList.add(new Index(roten.getNumber() + "", roten.getTitle(), roten.getDescription()));
 			}
 		} else if (kindIndex.equals(KIND.Shitsunai.toString())){
 			ArrayList<Shitsunai> shitsunaiList = chofufesData.getShitsunaiList();
@@ -72,7 +74,7 @@ public class IndexesActivity extends Activity {
 			for(Shitsunai shitsunai : shitsunaiList){
 				String building = Building.getBuilding(shitsunai.getNumber() / 1000);
 				int room = shitsunai.getNumber() % 1000;
-				titleList.add(new Index(building + room, shitsunai.getTitle(), ""));
+				indexList.add(new Index(building + room, shitsunai.getTitle(), ""));
 			}
 		} else if (kindIndex.equals(KIND.TimeTable.toString())){
 			ArrayList<TimeTable> timeTableList = chofufesData.getAozoraList();
@@ -87,10 +89,11 @@ public class IndexesActivity extends Activity {
 			});
 			for(TimeTable timeTable : timeTableList){
 				String date = setTime(timeTable); 
-				titleList.add(new Index(date, timeTable.getTitle(), timeTable.getDescription()));
+				String stage = Stage.getStage(timeTable.getField());
+				indexList.add(new Index(date + "@" + stage, timeTable.getTitle(), timeTable.getDescription()));
 			}
 		}
-		adapter = new IndexAdapter(this, 0, titleList);
+		adapter = new IndexAdapter(this, 0, indexList);
 		return adapter;
 	}
 /*	private ChofufesData loadByJson() throws Exception {
