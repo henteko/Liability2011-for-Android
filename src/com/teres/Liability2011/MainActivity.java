@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 		Indexbutton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				Intent intent = new Intent(MainActivity.this,
-						IndexActivity.class);
+						com.teres.Liability2011.index.IndexActivity.class);
 				intent.putExtra(getString(R.string.json),Sjson);
 //				MainActivity.this.startActivityForResult(intent, 0);
 				startActivity(intent);
@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
 		TimeTablebutton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				Intent intent = new Intent(MainActivity.this,
-						TimeTableActivity.class);
+						com.teres.Liability2011.timetable.TimeTableActivity.class);
 //				 MainActivity.this.startActivityForResult(intent, 0);
 				intent.putExtra(getString(R.string.json),Sjson);
 				startActivity(intent);
