@@ -42,7 +42,7 @@ public class DJson {
 				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 				httpResponse.getEntity().writeTo(outputStream);
 				String data;
-				data = outputStream.toString(); // JSONƒf[ƒ^
+				data = outputStream.toString(); // JSONï¿½fï¿½[ï¿½^
 
 				rootObject = new JSONObject(data);
 
@@ -65,12 +65,12 @@ public class DJson {
 	
 	public int get_id() {
 		
-		//id‚ğæ“¾‚·‚é
+		//idï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½
 		int id = 0;
 		JSONObject idJson = null;
 		HttpClient httpClient = new DefaultHttpClient();
 
-		StringBuilder uri = new StringBuilder("http://liability2011.appspot.com/liability2011test?command=Get_key");
+		StringBuilder uri = new StringBuilder("http://liability2011.appspot.com/liability2011?command=Get_key");
 		HttpGet request = new HttpGet(uri.toString());
 		HttpResponse httpResponse = null;
 
@@ -87,7 +87,7 @@ public class DJson {
 				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 				httpResponse.getEntity().writeTo(outputStream);
 				String data;
-				data = outputStream.toString(); // JSONƒf[ƒ^
+				data = outputStream.toString(); // JSONï¿½fï¿½[ï¿½^
 
 				idJson = new JSONObject(data);
 

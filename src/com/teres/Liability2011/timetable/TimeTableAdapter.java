@@ -1,12 +1,11 @@
 package com.teres.Liability2011.timetable;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
-
-import com.teres.Liability2011.R;
-import com.teres.Liability2011.R.id;
-import com.teres.Liability2011.R.layout;
 
 import jp.teres.numa08.chofufesdata.TimeTable;
 import android.content.Context;
@@ -15,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.teres.Liability2011.R;
 
 public class TimeTableAdapter extends ArrayAdapter<TimeTable> {
 	private static final String TAG = TimeTableAdapter.class.getSimpleName();
@@ -61,7 +62,10 @@ public class TimeTableAdapter extends ArrayAdapter<TimeTable> {
 
 	private String getTime(Calendar cal) {
 		// TODO Auto-generated method stub
-		int h = cal.get(Calendar.HOUR_OF_DAY);
+		Date date = cal.getTime();
+		DateFormat df = new SimpleDateFormat("hh:mm");
+		return df.format(date);
+/*		int h = cal.get(Calendar.HOUR_OF_DAY);
 		int m = cal.get(Calendar.MINUTE);
 		String hour, minute;
 		if(h < 10){
@@ -74,7 +78,7 @@ public class TimeTableAdapter extends ArrayAdapter<TimeTable> {
 		} else {
 			minute = "" + m;
 		}
-		return hour + ":" + minute;
+		return hour + ":" + minute;*/
 	}
 }
 

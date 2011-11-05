@@ -1,9 +1,12 @@
 package com.teres.Liability2011.index;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.TimeZone;
 
 import jp.teres.numa08.chofufesdata.ChofufesData;
@@ -12,7 +15,6 @@ import jp.teres.numa08.chofufesdata.Shitsunai;
 import jp.teres.numa08.chofufesdata.TimeTable;
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.teres.Liability2011.LoadJson;
@@ -137,7 +139,10 @@ public class IndexesActivity extends Activity {
 
 	private String getTime(Calendar cal) {
 		// TODO Auto-generated method stub
-		int d = cal.get(Calendar.DATE);
+		Date date = cal.getTime();
+		DateFormat df = new SimpleDateFormat("dd日HH:mm");
+		return df.format(date);
+/*		int d = cal.get(Calendar.DATE);
 		int h = cal.get(Calendar.HOUR_OF_DAY);
 		int m = cal.get(Calendar.MINUTE);
 		String hour, minute;
@@ -151,6 +156,6 @@ public class IndexesActivity extends Activity {
 		} else {
 			minute = "" + m;
 		}
-		return d + "日" + hour + ":" + minute;
+		return d + "日" + hour + ":" + minute;*/
 	}
 }

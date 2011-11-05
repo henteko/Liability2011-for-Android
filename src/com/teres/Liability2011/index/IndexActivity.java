@@ -1,5 +1,7 @@
 package com.teres.Liability2011.index;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -59,11 +61,11 @@ public class IndexActivity extends Activity{
 	
 	private ArrayAdapter<String> addAdapter() {
 		// TODO Auto-generated method stub
-		ArrayAdapter<String> indexes = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1);
+		ArrayList<String> indexes = new ArrayList<String>();
 		indexes.add("露店");
 		indexes.add("室内展示");
 		indexes.add("ステージ");
-		return indexes;
+		return new ArrayAdapter<String>(this, R.layout.timetable_and_index_low, R.id.title, indexes);
 	}
 	private void getMyReseouces() {
 		// TODO Auto-generated method stub

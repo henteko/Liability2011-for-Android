@@ -1,9 +1,6 @@
 package com.teres.Liability2011.timetable;
 
-import com.teres.Liability2011.R;
-import com.teres.Liability2011.R.id;
-import com.teres.Liability2011.R.layout;
-import com.teres.Liability2011.R.string;
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +10,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.teres.Liability2011.R;
 
 /************************************************
  * This source is Liability2011 TimeTableActivity.java
@@ -75,13 +74,11 @@ public class TimeTableActivity extends Activity {
 	}
 
 	private ArrayAdapter<String> addAdapter() {
-		// TODO Auto-generated method stub
-		ArrayAdapter<String> days = new ArrayAdapter<String>(this,
-				android.R.layout.simple_expandable_list_item_1);
+		ArrayList<String> days = new ArrayList<String>();
 		days.add(FIRST_DAY + "日");
 		days.add(FIRST_DAY + 1 + "日");
 		days.add(FIRST_DAY + 2 + "日");
-		return days;
+		return new ArrayAdapter<String>(this, R.layout.timetable_and_index_low, R.id.title, days);
 	}
 
 	private void getMyResources() {
@@ -108,5 +105,5 @@ public class TimeTableActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onStart();
 	}
-
+	
 }
