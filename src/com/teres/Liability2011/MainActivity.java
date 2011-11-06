@@ -312,7 +312,7 @@ public class MainActivity extends Activity {
 				final int id = dJson.get_id();
 				if (id != log_id) {
 
-					dJson.set_URL("http://liability2011.appspot.com/liability2011test?command=Load_data&id="
+					dJson.set_URL("http://liability2011.appspot.com/liability2011?command=Load_data&id="
 							+ id);
 					rootJSON = dJson.get_Date();
 
