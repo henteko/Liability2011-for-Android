@@ -94,7 +94,7 @@ public class IndexesActivity extends Activity {
 			});
 			for(TimeTable timeTable : timeTableList){
 				String date = setTime(timeTable); 
-				String stage = Stage.getStage(timeTable.getField());
+				String stage = getString(Stage.getStage(timeTable.getField()));
 				indexList.add(new Index(date + "@" + stage, timeTable.getTitle(), timeTable.getDescription()));
 			}
 		}

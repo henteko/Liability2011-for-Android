@@ -1,19 +1,21 @@
 package com.teres.Liability2011.index;
 
+import com.teres.Liability2011.R;
+
 public class Stage {
 	//private static final String TAG = Stage.class.getSimpleName();
 	//場所番号と催事場の対応表のクラスです。
 	
-	public static String getStage(int field){
+	public static int getStage(int field){
 		switch(field){
 		case 1:
-			return "青空劇場";
+			return R.string.stage1; 
 		case 2:
-			return "C棟前ステージ";
+			return R.string.stage2; 
 		case 3:
-			return "その他";
+			return R.string.stage3; 
 		default:
-			return null;
+			return 0;
 		}
 	}
 }
