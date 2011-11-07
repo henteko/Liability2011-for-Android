@@ -1,5 +1,7 @@
 package com.teres.Liability2011.index;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ import com.teres.Liability2011.R;
 public class IndexActivity extends Activity{
 	/** Called when the activity is first created. */
 	ListView indexList;
+	private String Sjson;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +41,6 @@ public class IndexActivity extends Activity{
 	private void setOnClicCallback(ListView indexList) {
 		// TODO Auto-generated method stub
 		indexList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position,
 					long id) {
@@ -52,6 +54,7 @@ public class IndexActivity extends Activity{
 				} else if(position ==2){
 					intent.putExtra("KIND", KIND.TimeTable.toString());
 				}
+				intent.putExtra(getString(R.string.json), Sjson);
 				startActivity(intent);
 			}
 		});
@@ -59,15 +62,16 @@ public class IndexActivity extends Activity{
 	
 	private ArrayAdapter<String> addAdapter() {
 		// TODO Auto-generated method stub
-		ArrayAdapter<String> indexes = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1);
+		ArrayList<String> indexes = new ArrayList<String>();
 		indexes.add("露店");
 		indexes.add("室内展示");
 		indexes.add("ステージ");
-		return indexes;
+		return new ArrayAdapter<String>(this, R.layout.timetable_and_index_low, R.id.title, indexes);
 	}
 	private void getMyReseouces() {
 		// TODO Auto-generated method stub
 		indexList = (ListView) findViewById(R.id.index_listview);
+		this.Sjson = getIntent().getStringExtra(getString(R.string.json));
 	}
 
 }

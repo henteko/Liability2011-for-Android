@@ -11,11 +11,12 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int actionbar_end_color=0x7f040003;
-        public static final int actionbar_start_color=0x7f040002;
-        public static final int background_color=0x7f040004;
+        public static final int actionbar_end_color=0x7f040004;
+        public static final int actionbar_start_color=0x7f040003;
+        public static final int background_color=0x7f040005;
         public static final int black=0x7f040001;
-        public static final int dashboard_text_color=0x7f040005;
+        public static final int dashboard_text_color=0x7f040006;
+        public static final int depth_green=0x7f040002;
         public static final int white=0x7f040000;
     }
     public static final class drawable {
@@ -30,20 +31,21 @@ public final class R {
         public static final int MapButton=0x7f070008;
         public static final int TimeTableButton=0x7f070009;
         public static final int Up_dataButton=0x7f070006;
-        public static final int actionbar_compat=0x7f070004;
-        public static final int aozora_list=0x7f070011;
-        public static final int event_description=0x7f07000f;
-        public static final int event_time=0x7f07000d;
-        public static final int event_title=0x7f07000e;
-        public static final int first_tab=0x7f070010;
+        public static final int actionbar_compat=0x7f070000;
+        public static final int aozora_list=0x7f070012;
+        public static final int event_description=0x7f070010;
+        public static final int event_time=0x7f07000e;
+        public static final int event_title=0x7f07000f;
+        public static final int first_tab=0x7f070011;
         public static final int imageView1=0x7f070005;
-        public static final int index_description=0x7f070003;
-        public static final int index_listview=0x7f070000;
-        public static final int index_time_or_place=0x7f070001;
-        public static final int index_title=0x7f070002;
-        public static final int secont_tab=0x7f070012;
-        public static final int third_tab=0x7f070013;
+        public static final int index_description=0x7f070004;
+        public static final int index_listview=0x7f070001;
+        public static final int index_time_or_place=0x7f070002;
+        public static final int index_title=0x7f070003;
+        public static final int secont_tab=0x7f070013;
+        public static final int third_tab=0x7f070014;
         public static final int timetable_listview=0x7f07000c;
+        public static final int title=0x7f07000d;
         public static final int toolbar=0x7f07000a;
         public static final int toolbar_text=0x7f07000b;
     }
@@ -52,8 +54,9 @@ public final class R {
         public static final int index_list=0x7f030001;
         public static final int main=0x7f030002;
         public static final int timetable=0x7f030003;
-        public static final int timetable_list=0x7f030004;
-        public static final int timetable_tablayout=0x7f030005;
+        public static final int timetable_and_index_low=0x7f030004;
+        public static final int timetable_list=0x7f030005;
+        public static final int timetable_tablayout=0x7f030006;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
