@@ -1,7 +1,8 @@
 package com.teres.Liability2011.index;
 
 public class Building {
-	private static final String TAG = Building.class.getSimpleName();
+	//private static final String TAG = Building.class.getSimpleName();
+	//場所番号と建物の対応表を保存するクラスです
 	
 	public static String getBuilding(int buildingNumber){
 		String buildingName = null;

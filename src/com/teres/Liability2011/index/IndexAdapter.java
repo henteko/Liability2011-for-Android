@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.teres.Liability2011.R;
 
 public class IndexAdapter extends ArrayAdapter<Index> {
-	private static final String TAG = IndexAdapter.class.getSimpleName();
+	//private static final String TAG = IndexAdapter.class.getSimpleName();
 	private LayoutInflater inflater;
 	
 	public IndexAdapter(Context context, int textViewResourceId,
@@ -47,6 +47,7 @@ public class IndexAdapter extends ArrayAdapter<Index> {
 	
 }
 
+//一つのリストの行に表示する内容を保存するクラス
 class ViewHolder{
 	TextView timeORplace;
 	TextView title;

@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.teres.Liability2011.R;
 
 public class TimeTableAdapter extends ArrayAdapter<TimeTable> {
-	private static final String TAG = TimeTableAdapter.class.getSimpleName();
+	//private static final String TAG = TimeTableAdapter.class.getSimpleName();
 	private LayoutInflater inflater;
 	
 	public TimeTableAdapter(Context context, int textViewResourceId,

@@ -25,11 +25,11 @@
 		android:layout_weight="1">
 
 		<Button android:id="@+id/IndexButton" style="@style/DashboardButton"
-			android:text="Index" android:drawableTop="@drawable/icon" />
+			android:text="Index" android:drawableTop="@drawable/remind_manager" />
 		<Button android:id="@+id/MapButton" style="@style/DashboardButton"
-			android:text="Map" android:drawableTop="@drawable/icon" />
+			android:text="Map" android:drawableTop="@drawable/map" />
 		<Button android:id="@+id/TimeTableButton" style="@style/DashboardButton"
-			android:text="TimeTable" android:drawableTop="@drawable/icon" />
+			android:text="TimeTable" android:drawableTop="@drawable/calendar" />
 
 	</com.teres.Liability2011.DashboardLayout>
 

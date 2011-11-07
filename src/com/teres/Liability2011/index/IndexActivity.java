@@ -21,6 +21,7 @@ import com.teres.Liability2011.R;
 public class IndexActivity extends Activity{
 	/** Called when the activity is first created. */
 	ListView indexList;
+	private String Sjson;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,6 @@ public class IndexActivity extends Activity{
 	private void setOnClicCallback(ListView indexList) {
 		// TODO Auto-generated method stub
 		indexList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position,
 					long id) {
@@ -54,6 +54,7 @@ public class IndexActivity extends Activity{
 				} else if(position ==2){
 					intent.putExtra("KIND", KIND.TimeTable.toString());
 				}
+				intent.putExtra(getString(R.string.json), Sjson);
 				startActivity(intent);
 			}
 		});
@@ -70,6 +71,7 @@ public class IndexActivity extends Activity{
 	private void getMyReseouces() {
 		// TODO Auto-generated method stub
 		indexList = (ListView) findViewById(R.id.index_listview);
+		this.Sjson = getIntent().getStringExtra(getString(R.string.json));
 	}
 
 }

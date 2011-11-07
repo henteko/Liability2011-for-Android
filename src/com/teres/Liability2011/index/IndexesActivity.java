@@ -21,9 +21,10 @@ import com.teres.Liability2011.LoadJson;
 import com.teres.Liability2011.R;
 
 public class IndexesActivity extends Activity {
-	private static final String TAG = IndexesActivity.class.getSimpleName();
+	//private static final String TAG = IndexesActivity.class.getSimpleName();
 	private ListView indexListView;
 	private String kindIndex;
+	private String Sjson;
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,9 @@ public class IndexesActivity extends Activity {
 		// TODO Auto-generated method stub
 		IndexAdapter adapter;
 		ArrayList<Index> indexList = new ArrayList<Index>();
-		ChofufesData chofufesData = LoadJson.loadByJson(getAssets());
+		//ChofufesData chofufesData = LoadJson.loadByJson(getAssets());
+		//Jsonを解析する
+		ChofufesData chofufesData = LoadJson.loadByJson(this.Sjson);
 		//indexListに項目を追加する。IndexActivityから渡されたKINDの種類で判断して
 		//どの項目を渡すのかを選択する
 		if(kindIndex.equals(KIND.Roten.toString())){
@@ -98,6 +101,8 @@ public class IndexesActivity extends Activity {
 		adapter = new IndexAdapter(this, 0, indexList);
 		return adapter;
 	}
+	
+//loadByJson()メソッドは、LoadJson#loadByJson()メソッドに引き継がれました。そっちを利用してください。
 /*	private ChofufesData loadByJson() throws Exception {
 		// TODO Auto-generated method stub
 		AssetManager assetManager = getResources().getAssets();
@@ -116,6 +121,7 @@ public class IndexesActivity extends Activity {
 		// TODO Auto-generated method stub
 		indexListView = (ListView) findViewById(R.id.index_listview);
 		kindIndex = getDataByIntent();
+		this.Sjson = getIntent().getStringExtra(getString(R.string.json));
 	}
 	private String getDataByIntent() {
 		// TODO Auto-generated method stub

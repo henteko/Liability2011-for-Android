@@ -24,6 +24,7 @@ public class TimeTableActivity extends Activity {
 	private static final String TAG = TimeTableActivity.class.getSimpleName();
 	ListView timetableList;
 	int FIRST_DAY;
+	private String Sjson;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,6 @@ public class TimeTableActivity extends Activity {
 		// TODO Auto-generated method stub
 		timetableList
 				.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
 					@Override
 					public void onItemClick(AdapterView<?> parent, View view,
 							int position, long id) {
@@ -68,6 +68,7 @@ public class TimeTableActivity extends Activity {
 							Log.d(TAG, "day = " + day);
 						}
 						Log.d(TAG, "and day = " + day);
+						intent.putExtra(getString(R.string.json), Sjson);
 						startActivity(intent);
 					}
 				});
@@ -86,6 +87,7 @@ public class TimeTableActivity extends Activity {
 		timetableList = (ListView) findViewById(R.id.timetable_listview);
 		FIRST_DAY = Integer.parseInt(getString(R.string.first_day));
 		Log.d(TAG, FIRST_DAY + "");
+		this.Sjson = getIntent().getStringExtra(getString(R.string.json));
 	}
 
 	@Override

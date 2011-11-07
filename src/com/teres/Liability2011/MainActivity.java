@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 		Indexbutton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				Intent intent = new Intent(MainActivity.this,
-						IndexActivity.class);
+						com.teres.Liability2011.index.IndexActivity.class);
 				intent.putExtra(getString(R.string.json),Sjson);
 //				MainActivity.this.startActivityForResult(intent, 0);
 				startActivity(intent);
@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
 		TimeTablebutton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				Intent intent = new Intent(MainActivity.this,
-						TimeTableActivity.class);
+						com.teres.Liability2011.timetable.TimeTableActivity.class);
 //				 MainActivity.this.startActivityForResult(intent, 0);
 				intent.putExtra(getString(R.string.json),Sjson);
 				startActivity(intent);
@@ -312,7 +312,7 @@ public class MainActivity extends Activity {
 				final int id = dJson.get_id();
 				if (id != log_id) {
 
-					dJson.set_URL("http://liability2011.appspot.com/liability2011test?command=Load_data&id="
+					dJson.set_URL("http://liability2011.appspot.com/liability2011?command=Load_data&id="
 							+ id);
 					rootJSON = dJson.get_Date();
 
