@@ -7,10 +7,16 @@ import java.util.TimeZone;
 import jp.teres.numa08.chofufesdata.ChofufesData;
 import jp.teres.numa08.chofufesdata.TimeTable;
 import android.app.TabActivity;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.teres.Liability2011.LoadJson;
 import com.teres.Liability2011.R;
@@ -29,31 +35,26 @@ public class TimeTableTabActivity extends TabActivity {
 		setContentView(R.layout.timetable_tablayout);
 		// リソースを取得する。
 		getMyResources();
+		
+		// タブの設定
+		TabHost tabHost = getTabHost();
+		addTabs(tabHost);
+		// JSONからの読み込み
+		ChofufesData chofufesData;
+		try {
+			chofufesData = LoadJson.loadByJson(this.Sjson);
+			setContent(chofufesData, tabHost);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Toast.makeText(this, "データを読み込めません", Toast.LENGTH_SHORT).show();
+			this.finish();
+		}
 	}
 
 	private void getMyResources() {
 		// TODO Auto-generated method stub
 		this.DATE = getIntent().getIntExtra("DATE", 0);
 		this.Sjson = getIntent().getStringExtra(getString(R.string.json));
-	}
-
-	@Override
-	protected void onStart() {
-		// TODO Auto-generated method stub
-		super.onStart();
-		// タブの設定
-		TabHost tabHost = getTabHost();
-		addTabs(tabHost);
-		// JSONからの読み込み
-		ChofufesData chofufesData = LoadJson.loadByJson(this.Sjson);
-
-		/*
-		 * //テスト用 ChofufesData chofufesData = null; try { //chofufesData =
-		 * loadDataByJson(); chofufesData = LoadJson.loadByJson(getAssets()); }
-		 * catch (Exception e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); }
-		 */
-		setContent(chofufesData, tabHost);
 	}
 
 	private void setContent(ChofufesData chofufesData, TabHost tabHost) {
@@ -112,14 +113,47 @@ public class TimeTableTabActivity extends TabActivity {
 
 	private void addTabs(TabHost tabHost) {
 		// TODO Auto-generated method stub
-		TabSpec firstTab = tabHost.newTabSpec("FirstTab").setIndicator("青空劇場")
+		TabSpec firstTab = tabHost.newTabSpec("FirstTab").setIndicator(new CustomTabContentView(this, getString(R.string.stage1), CustomTabContentView.LEFT))
 				.setContent(R.id.first_tab);
 		tabHost.addTab(firstTab);
 		TabSpec secontTab = tabHost.newTabSpec("SecondTab")
-				.setIndicator("secondTab").setContent(R.id.secont_tab);
+				.setIndicator(new CustomTabContentView(this, getString(R.string.stage2), CustomTabContentView.CENTER)).setContent(R.id.secont_tab);
 		tabHost.addTab(secontTab);
 		TabSpec thirdTab = tabHost.newTabSpec("ThirdTab")
-				.setIndicator("thirdTab").setContent(R.id.third_tab);
+				.setIndicator(new CustomTabContentView(this, getString(R.string.stage3), CustomTabContentView.RIGHT)).setContent(R.id.third_tab);
 		tabHost.addTab(thirdTab);
+	}
+	
+	public class CustomTabContentView extends FrameLayout{
+		LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	
+		final static int NONE = 0;
+		final static int CENTER = 1;
+		final static int LEFT = 2;
+		final static int RIGHT = 3;
+		
+		public CustomTabContentView(Context context, String title){
+			this(context, title, CENTER);
+		}
+		
+		public CustomTabContentView(Context context, String title, int position){
+			super(context);
+			View view = inflater.inflate(R.layout.custom_tab_widget, this);
+			((TextView) view.findViewById(R.id.tab_text)).setText(title);
+			
+			switch(position){
+			case LEFT:
+				setPadding(0, 0, 2, 0);
+				break;
+			case RIGHT:
+				setPadding(2, 0, 0, 0);
+				break;
+			case CENTER:
+				setPadding(2, 0, 2, 0);
+				break;
+			default:
+				break;
+			}
+		}
 	}
 }

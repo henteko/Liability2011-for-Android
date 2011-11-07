@@ -4,4 +4,7 @@
     <string name="app_name">Liability2011-for-android</string>
     <string name="first_day">19</string>
     <string name="json">CHOFUFES_JSON</string>
+    <string name="stage1">青空劇場</string>
+    <string name="stage2">C棟前ステージ</string>
+    <string name="stage3">その他</string>
 </resources>
