@@ -1,7 +1,7 @@
 package com.teres.Liability2011.index;
 
 public class Index {
-	private static final String TAG = Index.class.getSimpleName();
+	//private static final String TAG = Index.class.getSimpleName();
 	
 	private String timeOrplace;
 	

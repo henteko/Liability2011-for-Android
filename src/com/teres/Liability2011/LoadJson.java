@@ -37,4 +37,9 @@ public class LoadJson {
 		bufferedReader.close();
 		return chofufesData;
 	}
+	
+	public static ChofufesData loadByJson(String jsonString){
+		ChofufesData chofufesData = JSON.decode(jsonString, ChofufesData.class);
+		return chofufesData;
+	}
 }

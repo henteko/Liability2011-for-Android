@@ -12,10 +12,10 @@
 			</intent-filter>
 		</activity>
 		<activity android:name="MapActivity" android:screenOrientation="portrait"></activity>
-        <activity android:screenOrientation="portrait" android:name=".timetable.TimeTableActivity"></activity>
+        <activity android:screenOrientation="portrait" android:name=".timetable.TimeTableActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
         <activity android:screenOrientation="portrait" android:name=".timetable.TimeTableTabActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
-        <activity android:screenOrientation="portrait" android:name=".index.IndexActivity"></activity>
-        <activity android:screenOrientation="portrait" android:name=".index.IndexesActivity"></activity>
+        <activity android:screenOrientation="portrait" android:name=".index.IndexActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
+        <activity android:screenOrientation="portrait" android:name=".index.IndexesActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
 	
 	</application>
 

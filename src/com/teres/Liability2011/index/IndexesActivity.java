@@ -1,9 +1,12 @@
 package com.teres.Liability2011.index;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.TimeZone;
 
 import jp.teres.numa08.chofufesdata.ChofufesData;
@@ -12,16 +15,16 @@ import jp.teres.numa08.chofufesdata.Shitsunai;
 import jp.teres.numa08.chofufesdata.TimeTable;
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.teres.Liability2011.LoadJson;
 import com.teres.Liability2011.R;
 
 public class IndexesActivity extends Activity {
-	private static final String TAG = IndexesActivity.class.getSimpleName();
+	//private static final String TAG = IndexesActivity.class.getSimpleName();
 	private ListView indexListView;
 	private String kindIndex;
+	private String Sjson;
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -45,7 +48,9 @@ public class IndexesActivity extends Activity {
 		// TODO Auto-generated method stub
 		IndexAdapter adapter;
 		ArrayList<Index> indexList = new ArrayList<Index>();
-		ChofufesData chofufesData = LoadJson.loadByJson(getAssets());
+		//ChofufesData chofufesData = LoadJson.loadByJson(getAssets());
+		//Jsonを解析する
+		ChofufesData chofufesData = LoadJson.loadByJson(this.Sjson);
 		//indexListに項目を追加する。IndexActivityから渡されたKINDの種類で判断して
 		//どの項目を渡すのかを選択する
 		if(kindIndex.equals(KIND.Roten.toString())){
@@ -96,6 +101,8 @@ public class IndexesActivity extends Activity {
 		adapter = new IndexAdapter(this, 0, indexList);
 		return adapter;
 	}
+	
+//loadByJson()メソッドは、LoadJson#loadByJson()メソッドに引き継がれました。そっちを利用してください。
 /*	private ChofufesData loadByJson() throws Exception {
 		// TODO Auto-generated method stub
 		AssetManager assetManager = getResources().getAssets();
@@ -114,6 +121,7 @@ public class IndexesActivity extends Activity {
 		// TODO Auto-generated method stub
 		indexListView = (ListView) findViewById(R.id.index_listview);
 		kindIndex = getDataByIntent();
+		this.Sjson = getIntent().getStringExtra(getString(R.string.json));
 	}
 	private String getDataByIntent() {
 		// TODO Auto-generated method stub
@@ -137,7 +145,10 @@ public class IndexesActivity extends Activity {
 
 	private String getTime(Calendar cal) {
 		// TODO Auto-generated method stub
-		int d = cal.get(Calendar.DATE);
+		Date date = cal.getTime();
+		DateFormat df = new SimpleDateFormat("dd日HH:mm");
+		return df.format(date);
+/*		int d = cal.get(Calendar.DATE);
 		int h = cal.get(Calendar.HOUR_OF_DAY);
 		int m = cal.get(Calendar.MINUTE);
 		String hour, minute;
@@ -151,6 +162,6 @@ public class IndexesActivity extends Activity {
 		} else {
 			minute = "" + m;
 		}
-		return d + "日" + hour + ":" + minute;
+		return d + "日" + hour + ":" + minute;*/
 	}
 }
