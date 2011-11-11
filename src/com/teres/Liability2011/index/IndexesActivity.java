@@ -4,8 +4,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -16,6 +14,7 @@ import jp.teres.numa08.chofufesdata.TimeTable;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.teres.Liability2011.LoadJson;
 import com.teres.Liability2011.R;
@@ -50,24 +49,32 @@ public class IndexesActivity extends Activity {
 		ArrayList<Index> indexList = new ArrayList<Index>();
 		//ChofufesData chofufesData = LoadJson.loadByJson(getAssets());
 		//Jsonを解析する
-		ChofufesData chofufesData = LoadJson.loadByJson(this.Sjson);
+		ChofufesData chofufesData = null;
+		try {
+			chofufesData = LoadJson.loadByJson(this.Sjson);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+	    	Toast.makeText(this, "データを読み込めません", Toast.LENGTH_SHORT).show();
+	    	finish();
+			e.printStackTrace();
+		}
 		//indexListに項目を追加する。IndexActivityから渡されたKINDの種類で判断して
 		//どの項目を渡すのかを選択する
 		if(kindIndex.equals(KIND.Roten.toString())){
 			ArrayList<Roten> rotenList = chofufesData.getRotenList();
-			Collections.sort(rotenList, new Comparator<Roten>(){
+/*			Collections.sort(rotenList, new Comparator<Roten>(){
 				@Override
 				public int compare(Roten arg0, Roten arg1) {
 					// TODO Auto-generated method stub
 					return arg0.getTitle().compareTo(arg1.getTitle());
 				}
-			});
+			});*/
 			for(Roten roten : rotenList){
 				indexList.add(new Index(roten.getNumber() + "", roten.getTitle(), roten.getDescription()));
 			}
 		} else if (kindIndex.equals(KIND.Shitsunai.toString())){
 			ArrayList<Shitsunai> shitsunaiList = chofufesData.getShitsunaiList();
-			Collections.sort(shitsunaiList, new Comparator<Shitsunai>(){
+/*			Collections.sort(shitsunaiList, new Comparator<Shitsunai>(){
 
 				@Override
 				public int compare(Shitsunai arg0, Shitsunai arg1) {
@@ -75,15 +82,23 @@ public class IndexesActivity extends Activity {
 					return arg0.getTitle().compareTo(arg1.getTitle());
 				}
 				
-			});
+			});*/
 			for(Shitsunai shitsunai : shitsunaiList){
-				String building = Building.getBuilding(shitsunai.getNumber() / 1000);
-				int room = shitsunai.getNumber() % 1000;
+				//String building = Building.getBuilding(shitsunai.getNumber() / 1000);
+				String building = getResources().getStringArray(R.array.building_name)[shitsunai.getNumber() / 1000 -1 ];
+				//int room = shitsunai.getNumber() % 1000;
+				String room;
+				int roomNumber = shitsunai.getNumber() % 1000;
+				if(roomNumber == 0){
+					room = "";
+				} else {
+					room = String.valueOf(roomNumber);
+				}
 				indexList.add(new Index(building + room, shitsunai.getTitle(), ""));
 			}
 		} else if (kindIndex.equals(KIND.TimeTable.toString())){
 			ArrayList<TimeTable> timeTableList = chofufesData.getAozoraList();
-			Collections.sort(timeTableList, new Comparator<TimeTable>(){
+/*			Collections.sort(timeTableList, new Comparator<TimeTable>(){
 
 				@Override
 				public int compare(TimeTable arg0, TimeTable arg1) {
@@ -91,7 +106,7 @@ public class IndexesActivity extends Activity {
 					return arg0.getTitle().compareTo(arg1.getTitle());
 				}
 				
-			});
+			});*/
 			for(TimeTable timeTable : timeTableList){
 				String date = setTime(timeTable); 
 				String stage = getString(Stage.getStage(timeTable.getField()));

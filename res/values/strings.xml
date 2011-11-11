@@ -2,9 +2,22 @@
 <resources>
     <string name="hello">Hello World, MainActivity!</string>
     <string name="app_name">Liability2011-for-android</string>
-    <string name="first_day">19</string>
+    <string name="first_day">18</string>
     <string name="json">CHOFUFES_JSON</string>
     <string name="stage1">青空劇場</string>
-    <string name="stage2">C棟前ステージ</string>
+    <string name="stage2">C棟前\nステージ</string>
     <string name="stage3">その他</string>
+    <string-array name="building_name">
+        <item >A棟</item>
+        <item >e-</item>
+        <item >C棟</item>
+        <item >学生会館</item>
+        <item >サークル棟</item>
+        <item >西2-</item>
+        <item >西5-</item>
+        <item >西8-</item>
+        <item >西9-</item>
+        <item >第一体育館</item>
+        <item >第二体育館</item>
+    </string-array>
 </resources>
