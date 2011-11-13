@@ -3,7 +3,6 @@ package jp.teres.numa08.chofufesdata;
 import java.util.ArrayList;
 
 public class ChofufesData {
-	private static final String TAG = ChofufesData.class.getSimpleName();
 	private ArrayList<TimeTable> timeTableList;
 	private ArrayList<Roten> rotenList;
 	private ArrayList<Shitsunai> shitsunaiList;

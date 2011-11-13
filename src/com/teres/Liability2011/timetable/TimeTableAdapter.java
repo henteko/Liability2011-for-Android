@@ -63,7 +63,7 @@ public class TimeTableAdapter extends ArrayAdapter<TimeTable> {
 	private String getTime(Calendar cal) {
 		// TODO Auto-generated method stub
 		Date date = cal.getTime();
-		DateFormat df = new SimpleDateFormat("hh:mm");
+		DateFormat df = new SimpleDateFormat("kk:mm");
 		return df.format(date);
 /*		int h = cal.get(Calendar.HOUR_OF_DAY);
 		int m = cal.get(Calendar.MINUTE);

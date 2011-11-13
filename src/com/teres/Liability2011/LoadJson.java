@@ -38,7 +38,7 @@ public class LoadJson {
 		return chofufesData;
 	}
 	
-	public static ChofufesData loadByJson(String jsonString){
+	public static ChofufesData loadByJson(String jsonString) throws Exception{
 		ChofufesData chofufesData = JSON.decode(jsonString, ChofufesData.class);
 		return chofufesData;
 	}

@@ -8,6 +8,9 @@
 package com.teres.Liability2011;
 
 public final class R {
+    public static final class array {
+        public static final int building_name=0x7f060000;
+    }
     public static final class attr {
     }
     public static final class color {
@@ -29,28 +32,30 @@ public final class R {
         public static final int remind_manager=0x7f020004;
     }
     public static final class id {
-        public static final int IndexButton=0x7f070008;
-        public static final int MapButton=0x7f070009;
-        public static final int TimeTableButton=0x7f07000a;
-        public static final int Up_dataButton=0x7f070007;
-        public static final int actionbar_compat=0x7f070001;
-        public static final int aozora_list=0x7f070013;
-        public static final int event_description=0x7f070011;
-        public static final int event_time=0x7f07000f;
-        public static final int event_title=0x7f070010;
-        public static final int first_tab=0x7f070012;
-        public static final int imageView1=0x7f070006;
-        public static final int index_description=0x7f070005;
-        public static final int index_listview=0x7f070002;
-        public static final int index_time_or_place=0x7f070003;
-        public static final int index_title=0x7f070004;
-        public static final int secont_tab=0x7f070014;
-        public static final int tab_text=0x7f070000;
-        public static final int third_tab=0x7f070015;
-        public static final int timetable_listview=0x7f07000d;
-        public static final int title=0x7f07000e;
-        public static final int toolbar=0x7f07000b;
-        public static final int toolbar_text=0x7f07000c;
+        public static final int IndexButton=0x7f080008;
+        public static final int MapButton=0x7f080009;
+        public static final int TimeTableButton=0x7f08000a;
+        public static final int Up_dataButton=0x7f080007;
+        public static final int actionbar_compat=0x7f080001;
+        public static final int aozora_list=0x7f080013;
+        public static final int ctou_list=0x7f080015;
+        public static final int event_description=0x7f080011;
+        public static final int event_time=0x7f08000f;
+        public static final int event_title=0x7f080010;
+        public static final int first_tab=0x7f080012;
+        public static final int imageView1=0x7f080006;
+        public static final int index_description=0x7f080005;
+        public static final int index_listview=0x7f080002;
+        public static final int index_time_or_place=0x7f080003;
+        public static final int index_title=0x7f080004;
+        public static final int secont_tab=0x7f080014;
+        public static final int sonota_list=0x7f080017;
+        public static final int tab_text=0x7f080000;
+        public static final int third_tab=0x7f080016;
+        public static final int timetable_listview=0x7f08000d;
+        public static final int title=0x7f08000e;
+        public static final int toolbar=0x7f08000b;
+        public static final int toolbar_text=0x7f08000c;
     }
     public static final class layout {
         public static final int custom_tab_widget=0x7f030000;
@@ -72,6 +77,6 @@ public final class R {
         public static final int stage3=0x7f050006;
     }
     public static final class style {
-        public static final int DashboardButton=0x7f060000;
+        public static final int DashboardButton=0x7f070000;
     }
 }
