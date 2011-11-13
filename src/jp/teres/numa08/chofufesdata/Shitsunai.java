@@ -2,6 +2,11 @@ package jp.teres.numa08.chofufesdata;
 
 
 public class Shitsunai extends Chofufes {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Key key;
 	
 	private int number;

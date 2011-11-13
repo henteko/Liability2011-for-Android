@@ -1,6 +1,11 @@
 package jp.teres.numa08.chofufesdata;
 
 public class Roten extends Chofufes {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Key key;
 	
 	private int number;
