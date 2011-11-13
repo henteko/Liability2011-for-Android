@@ -1,8 +1,6 @@
 package jp.teres.numa08.chofufesdata;
 
 public class Key {
-	private static final String TAG = Key.class.getSimpleName();
-	
 	private boolean complete;
 	
 	private Long id;

@@ -60,6 +60,8 @@ public class TimeTableTabActivity extends TabActivity {
 	private void setContent(ChofufesData chofufesData, TabHost tabHost) {
 		// TODO Auto-generated method stub
 		setTab(chofufesData, R.id.aozora_list, 1);
+		setTab(chofufesData, R.id.ctou_list, 2);
+		setTab(chofufesData, R.id.sonota_list, 3);
 		/*
 		 * ListView aozoraList = (ListView) findViewById(R.id.aozora_list);
 		 * TimeTableAdapter adapter = new TimeTableAdapter(this,0,

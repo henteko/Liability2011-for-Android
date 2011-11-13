@@ -3,6 +3,11 @@ package jp.teres.numa08.chofufesdata;
 
 
 public class TimeTable extends Chofufes{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Key key;
 	
 	private Long startDate;

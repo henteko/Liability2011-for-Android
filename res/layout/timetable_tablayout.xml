@@ -38,11 +38,19 @@
 		android:id="@+id/secont_tab"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
+			<ListView
+			    android:id="@+id/ctou_list"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"/>
 		</LinearLayout>
 		<LinearLayout
 		android:id="@+id/third_tab"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
+			<ListView
+			    android:id="@+id/sonota_list"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"/>
 		</LinearLayout>
 	</FrameLayout>  
   </LinearLayout>
