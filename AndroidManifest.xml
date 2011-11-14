@@ -11,7 +11,7 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:screenOrientation="portrait" android:name=".map.MapActivity"></activity>
+		<activity android:screenOrientation="portrait" android:name=".map.MapActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
         <activity android:screenOrientation="portrait" android:name=".timetable.TimeTableActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
         <activity android:screenOrientation="portrait" android:name=".timetable.TimeTableTabActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
         <activity android:screenOrientation="portrait" android:name=".index.IndexActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
