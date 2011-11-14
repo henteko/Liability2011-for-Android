@@ -37,7 +37,7 @@ public class MapActivity extends Activity{
 		
 		// アラートダイアログを表示するjavascript interfaceを追加
 		// 第一引数がオブジェクトで、第二引数がjavascriptから呼び出すときの名前
-		webview.addJavascriptInterface(new CreateDialog(this.getApplicationContext(), this.Sjson), "dlg");
+		webview.addJavascriptInterface(new CreateDialog(this, this.Sjson), "dlg");
 		
 		// assetのindex.htmlを読み込み
 		webview.loadUrl("file:///android_asset/map.html");

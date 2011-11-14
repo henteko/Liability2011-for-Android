@@ -48,11 +48,11 @@ public class IndexActivity extends Activity{
 				Intent intent = new Intent(IndexActivity.this, IndexesActivity.class);
 				//クリックされた項目を判定し、項目名（露店、室内展示、ステージのいずれか）を次のアクティビティに渡す
 				if(position == 0){
-					intent.putExtra("KIND", KIND.Roten.toString());
+					intent.putExtra("KIND", getResources().getStringArray(R.array.kind)[0]);
 				} else if(position == 1){
-					intent.putExtra("KIND", KIND.Shitsunai.toString());
+					intent.putExtra("KIND", getResources().getStringArray(R.array.kind)[1]);
 				} else if(position ==2){
-					intent.putExtra("KIND", KIND.TimeTable.toString());
+					intent.putExtra("KIND", getResources().getStringArray(R.array.kind)[2]);
 				}
 				intent.putExtra(getString(R.string.json), Sjson);
 				startActivity(intent);
