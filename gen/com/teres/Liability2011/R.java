@@ -69,6 +69,7 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050001;
+        public static final int back=0x7f050007;
         public static final int first_day=0x7f050002;
         public static final int hello=0x7f050000;
         public static final int json=0x7f050003;
