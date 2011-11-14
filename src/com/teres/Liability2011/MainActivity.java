@@ -14,6 +14,7 @@ import java.util.Date;
 import org.json.JSONObject;
 
 import com.teres.Liability2011.index.IndexActivity;
+import com.teres.Liability2011.map.MapActivity;
 import com.teres.Liability2011.timetable.TimeTableActivity;
 
 import android.app.Activity;
@@ -90,7 +91,8 @@ public class MainActivity extends Activity {
 		Button Mapbutton = (Button) findViewById(R.id.MapButton);
 		Mapbutton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent intent = new Intent(MainActivity.this, MapActivity.class);
+				Intent intent = new Intent(MainActivity.this, 
+						com.teres.Liability2011.map.MapActivity.class);
 				intent.putExtra(getString(R.string.json),Sjson);
 //				MainActivity.this.startActivityForResult(intent, 0);
 				startActivity(intent);
