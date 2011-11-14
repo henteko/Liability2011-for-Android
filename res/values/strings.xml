@@ -21,4 +21,9 @@
         <item >第二体育館</item>
     </string-array>
     <string name="back">戻る</string>
+    <string-array name="kind">
+        <item >Roten</item>
+        <item >Shitsunai</item>
+        <item >TimeTable</item>
+    </string-array>
 </resources>
