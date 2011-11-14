@@ -9,7 +9,7 @@
 		android:orientation="horizontal" android:background="@drawable/actionbar_gradation">
 		<RelativeLayout android:layout_width="fill_parent"
 			android:layout_height="wrap_content">
-			<ImageView android:src="@drawable/icon"
+			<ImageView android:src="@drawable/rogo"
 				android:layout_height="wrap_content" android:id="@+id/imageView1"
 				android:layout_width="wrap_content" android:layout_alignParentLeft="true"></ImageView>
 			<ImageButton android:src="@android:drawable/ic_menu_rotate"
@@ -25,11 +25,11 @@
 		android:layout_weight="1">
 
 		<Button android:id="@+id/IndexButton" style="@style/DashboardButton"
-			android:text="Index" android:drawableTop="@drawable/remind_manager" />
+			android:text="Index" android:drawableTop="@drawable/index" />
 		<Button android:id="@+id/MapButton" style="@style/DashboardButton"
 			android:text="Map" android:drawableTop="@drawable/map" />
 		<Button android:id="@+id/TimeTableButton" style="@style/DashboardButton"
-			android:text="TimeTable" android:drawableTop="@drawable/calendar" />
+			android:text="TimeTable" android:drawableTop="@drawable/timetable" />
 
 	</com.teres.Liability2011.DashboardLayout>
 
