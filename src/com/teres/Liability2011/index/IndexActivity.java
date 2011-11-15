@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.teres.Liability2011.R;
+import com.teres.Liability2011.utils.SetActionbarText;
 
 /************************************************
  * This source is Liability2011 IndexActivity.java
@@ -29,6 +30,9 @@ public class IndexActivity extends Activity{
         
         //リソースファイルを取得する
         getMyReseouces();
+        
+        //アクションバーのテキストの設定
+        SetActionbarText.setActionbarText(this, "インデックス");
         
         //リストビューに値をセットする
         ArrayAdapter<String> indexes = addAdapter();
@@ -63,9 +67,10 @@ public class IndexActivity extends Activity{
 	private ArrayAdapter<String> addAdapter() {
 		// TODO Auto-generated method stub
 		ArrayList<String> indexes = new ArrayList<String>();
-		indexes.add("露店");
-		indexes.add("室内展示");
-		indexes.add("ステージ");
+		String[] kinds = getResources().getStringArray(R.array.kind);
+		for(String kind : kinds){
+			indexes.add(kind);
+		}
 		return new ArrayAdapter<String>(this, R.layout.timetable_and_index_low, R.id.title, indexes);
 	}
 	private void getMyReseouces() {
@@ -73,5 +78,5 @@ public class IndexActivity extends Activity{
 		indexList = (ListView) findViewById(R.id.index_listview);
 		this.Sjson = getIntent().getStringExtra(getString(R.string.json));
 	}
-
+	
 }

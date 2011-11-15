@@ -18,8 +18,9 @@ import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.teres.Liability2011.LoadJson;
 import com.teres.Liability2011.R;
+import com.teres.Liability2011.utils.LoadJson;
+import com.teres.Liability2011.utils.SetActionbarText;
 
 public class TimeTableTabActivity extends TabActivity {
 	// private static final String TAG = TimeTableTabActivity.class
@@ -35,6 +36,9 @@ public class TimeTableTabActivity extends TabActivity {
 		setContentView(R.layout.timetable_tablayout);
 		// リソースを取得する。
 		getMyResources();
+		
+		//アクションバーのテキストの設定
+		SetActionbarText.setActionbarText(this, this.DATE + "日");
 		
 		// タブの設定
 		TabHost tabHost = getTabHost();
@@ -56,7 +60,7 @@ public class TimeTableTabActivity extends TabActivity {
 		this.DATE = getIntent().getIntExtra("DATE", 0);
 		this.Sjson = getIntent().getStringExtra(getString(R.string.json));
 	}
-
+	
 	private void setContent(ChofufesData chofufesData, TabHost tabHost) {
 		// TODO Auto-generated method stub
 		setTab(chofufesData, R.id.aozora_list, 1);

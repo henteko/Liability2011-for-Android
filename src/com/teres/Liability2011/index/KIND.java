@@ -1,4 +1,4 @@
-package com.teres.Liability2011.index;
+/*package com.teres.Liability2011.index;
 
 public enum KIND {
 	Roten("Roten"),
@@ -15,3 +15,4 @@ public enum KIND {
 		return this.kind;
 	}
 }
+*/
