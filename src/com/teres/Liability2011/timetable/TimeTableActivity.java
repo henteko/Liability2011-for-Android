@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.teres.Liability2011.R;
+import com.teres.Liability2011.utils.SetActionbarText;
 
 /************************************************
  * This source is Liability2011 TimeTableActivity.java
@@ -33,6 +34,9 @@ public class TimeTableActivity extends Activity {
 
 		// リソースファイルを取得する
 		getMyResources();
+		
+		//アクションバーのテキストを設定する
+		SetActionbarText.setActionbarText(this, this.getResources().getStringArray(R.array.kind)[2]);
 
 		// リストビューに値をセットする
 		ArrayAdapter<String> days = addAdapter();
@@ -89,7 +93,7 @@ public class TimeTableActivity extends Activity {
 		Log.d(TAG, FIRST_DAY + "");
 		this.Sjson = getIntent().getStringExtra(getString(R.string.json));
 	}
-
+	
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub

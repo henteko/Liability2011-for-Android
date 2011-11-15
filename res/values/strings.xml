@@ -22,8 +22,8 @@
     </string-array>
     <string name="back">戻る</string>
     <string-array name="kind">
-        <item >Roten</item>
-        <item >Shitsunai</item>
-        <item >TimeTable</item>
+        <item >露店</item>
+        <item >室内展示</item>
+        <item >タイムテーブル</item>
     </string-array>
 </resources>

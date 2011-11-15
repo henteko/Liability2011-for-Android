@@ -16,8 +16,9 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.teres.Liability2011.LoadJson;
 import com.teres.Liability2011.R;
+import com.teres.Liability2011.utils.LoadJson;
+import com.teres.Liability2011.utils.SetActionbarText;
 
 public class IndexesActivity extends Activity {
 	//private static final String TAG = IndexesActivity.class.getSimpleName();
@@ -33,6 +34,9 @@ public class IndexesActivity extends Activity {
 	    //リソースを取得する
 	    getMyResources();
 	    
+	    //アクションバーのテキストの設定
+	    SetActionbarText.setActionbarText(this, this.kindIndex);
+	    
 	    //リストビューに値をセットする
 	    //Kindの値によって、セットする値は異なる
 	    try {
@@ -46,6 +50,7 @@ public class IndexesActivity extends Activity {
 	private IndexAdapter addAdapter(String kindIndex) throws Exception {
 		// TODO Auto-generated method stub
 		IndexAdapter adapter;
+		String[] kind = getResources().getStringArray(R.array.kind);
 		ArrayList<Index> indexList = new ArrayList<Index>();
 		//ChofufesData chofufesData = LoadJson.loadByJson(getAssets());
 		//Jsonを解析する
@@ -60,7 +65,7 @@ public class IndexesActivity extends Activity {
 		}
 		//indexListに項目を追加する。IndexActivityから渡されたKINDの種類で判断して
 		//どの項目を渡すのかを選択する
-		if(kindIndex.equals(KIND.Roten.toString())){
+		if(kindIndex.equals(kind[0])){
 			ArrayList<Roten> rotenList = chofufesData.getRotenList();
 /*			Collections.sort(rotenList, new Comparator<Roten>(){
 				@Override
@@ -72,7 +77,7 @@ public class IndexesActivity extends Activity {
 			for(Roten roten : rotenList){
 				indexList.add(new Index(roten.getNumber() + "", roten.getTitle(), roten.getDescription()));
 			}
-		} else if (kindIndex.equals(KIND.Shitsunai.toString())){
+		} else if (kindIndex.equals(kind[1])){
 			ArrayList<Shitsunai> shitsunaiList = chofufesData.getShitsunaiList();
 /*			Collections.sort(shitsunaiList, new Comparator<Shitsunai>(){
 
@@ -96,7 +101,7 @@ public class IndexesActivity extends Activity {
 				}
 				indexList.add(new Index(building + room, shitsunai.getTitle(), ""));
 			}
-		} else if (kindIndex.equals(KIND.TimeTable.toString())){
+		} else if (kindIndex.equals(kind[2])){
 			ArrayList<TimeTable> timeTableList = chofufesData.getAozoraList();
 /*			Collections.sort(timeTableList, new Comparator<TimeTable>(){
 
