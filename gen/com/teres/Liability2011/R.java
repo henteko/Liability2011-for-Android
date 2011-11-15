@@ -17,21 +17,24 @@ public final class R {
     public static final class color {
         public static final int actionbar_end_color=0x7f040004;
         public static final int actionbar_start_color=0x7f040003;
+        public static final int actionbar_text_color=0x7f040007;
         public static final int background_color=0x7f040005;
         public static final int black=0x7f040001;
         public static final int dashboard_text_color=0x7f040006;
         public static final int depth_green=0x7f040002;
-        public static final int tab_background=0x7f040007;
-        public static final int tab_textcolor=0x7f040008;
+        public static final int tab_background=0x7f040008;
+        public static final int tab_textcolor=0x7f040009;
         public static final int white=0x7f040000;
     }
     public static final class drawable {
         public static final int actionbar_gradation=0x7f020000;
-        public static final int icon=0x7f020001;
-        public static final int index=0x7f020002;
-        public static final int map=0x7f020003;
-        public static final int rogo=0x7f020004;
-        public static final int timetable=0x7f020005;
+        public static final int calendar=0x7f020001;
+        public static final int icon=0x7f020002;
+        public static final int index=0x7f020003;
+        public static final int map=0x7f020004;
+        public static final int remind_manager=0x7f020005;
+        public static final int rogo=0x7f020006;
+        public static final int timetable=0x7f020007;
     }
     public static final class id {
         public static final int IndexButton=0x7f080008;

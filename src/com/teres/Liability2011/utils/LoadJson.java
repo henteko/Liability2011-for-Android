@@ -1,4 +1,4 @@
-package com.teres.Liability2011;
+package com.teres.Liability2011.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

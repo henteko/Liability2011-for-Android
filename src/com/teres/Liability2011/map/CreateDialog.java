@@ -14,9 +14,9 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.teres.Liability2011.LoadJson;
 import com.teres.Liability2011.R;
 import com.teres.Liability2011.index.Index;
+import com.teres.Liability2011.utils.LoadJson;
 
 class CreateDialog {
 	private static final String TAG = CreateDialog.class.getSimpleName();
