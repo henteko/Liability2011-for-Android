@@ -25,7 +25,7 @@ class CreateDialog {
 	private ChofufesData chofufesData;
 
 	public CreateDialog(MapActivity activit, String sjson) {
-		super();
+		//super();
 		this.activity = activit;
 		try {
 			this.chofufesData = LoadJson.loadByJson(sjson);
@@ -149,6 +149,7 @@ class CreateDialog {
 				break;
 			}
 		}
+		Log.d(TAG, indexList.size() + "");
 		return new MapIndexAdapter(activity, 0 ,indexList);
 	}
 }
