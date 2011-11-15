@@ -38,7 +38,7 @@ public class TimeTableTabActivity extends TabActivity {
 		getMyResources();
 		
 		//アクションバーのテキストの設定
-		SetActionbarText.setActionbarText(this, this.DATE + "日");
+		SetActionbarText.setActionbarText(this, this.getResources().getStringArray(R.array.kind)[2] + ">>" + this.DATE + "日");
 		
 		// タブの設定
 		TabHost tabHost = getTabHost();

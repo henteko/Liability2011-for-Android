@@ -35,7 +35,7 @@ public class IndexesActivity extends Activity {
 	    getMyResources();
 	    
 	    //アクションバーのテキストの設定
-	    SetActionbarText.setActionbarText(this, this.kindIndex);
+	    SetActionbarText.setActionbarText(this, "インデックス>>" + this.kindIndex);
 	    
 	    //リストビューに値をセットする
 	    //Kindの値によって、セットする値は異なる

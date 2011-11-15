@@ -11,7 +11,7 @@
 			android:layout_height="wrap_content">
 			<ImageView android:src="@drawable/rogo"
 				android:layout_height="wrap_content" android:id="@+id/imageView1"
-				android:layout_width="wrap_content" android:layout_alignParentLeft="true"></ImageView>
+				android:layout_width="wrap_content" android:layout_alignParentLeft="true" ></ImageView>
 			<ImageButton android:src="@android:drawable/ic_menu_rotate"
 				android:id="@+id/Up_dataButton" android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:text="DB更新"
