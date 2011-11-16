@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Hello World, MainActivity!</string>
-    <string name="app_name">Liability2011-for-android</string>
+    <string name="app_name">調布祭nav2011</string>
     <string name="first_day">18</string>
     <string name="json">CHOFUFES_JSON</string>
     <string name="stage1">青空劇場</string>
