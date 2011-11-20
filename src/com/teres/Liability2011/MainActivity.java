@@ -66,14 +66,21 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.main);
 
 		// jsonをアップデート
-		do_Updata();
+		//調布祭は終了しましたのでサーバーに接続しない用にコメントアウト
+		//do_Updata();
+		
+		finish_2011();
+		
+		
 		
 		
 		ImageButton Up_dataButton = (ImageButton) findViewById(R.id.Up_dataButton);
 		Up_dataButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				//DBのアップデート処理実行
-				do_Updata();
+				//do_Updata();
+				
+				finish_2011();
 			}
 		});
 
@@ -110,6 +117,11 @@ public class MainActivity extends Activity {
 			}
 		});
 
+	}
+	
+	public void finish_2011() {
+		Toast.makeText(MainActivity.this,
+				"調布祭2011は終了しました", Toast.LENGTH_SHORT).show();
 	}
 
 //	// メニューの定義
